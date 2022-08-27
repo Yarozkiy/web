@@ -1,5 +1,6 @@
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
@@ -25,7 +26,7 @@ public class SelenideTest {
     void shouldTestNotClickAgreement() {
         $("[data-test-id=name] input").setValue("Алексей");
         $("[data-test-id=phone] input").setValue("+79111784110");
-        $("[data-test-id=agreement]").click();
+        //$("[data-test-id=agreement]").click();
         $("button").click();
         $("[data-test-id=agreement]").shouldHave(cssClass("input_invalid"));
     }
